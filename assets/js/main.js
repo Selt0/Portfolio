@@ -87,3 +87,27 @@
 
 	// Main Sections: Two.
 })(jQuery);
+
+
+//toggle theme
+const toggle = document.querySelector('.toggle-input')
+const body = document.querySelector('body')
+const toggleIcon = document.querySelector('.toggle-icon')
+
+toggle.addEventListener('change', toggleTheme)
+
+function toggleTheme(){
+	if (toggle.checked) {
+		body.classList.replace('light', 'dark')
+	} else {
+		body.classList.replace('dark', 'light')
+	}
+	
+	if (body.classList.contains('light')) {
+		toggleIcon.src = './images/moon.svg'
+		toggleIcon.alt = 'Switch to Dark mode'
+	} else {
+		toggleIcon.src = './images/sun.svg'
+		toggleIcon.alt = 'Switch to Light mode'
+	}
+}

@@ -160,10 +160,69 @@ textarea {
 	appearance: none;
 }
 
+/* COLORS */
+.light {
+	--main-bg-color: #fff;
+	--main-title-color: #787878;
+	--main-content-color: #a2a2a2;
+	--shadow: #507dbc;
+}
+
+.dark {
+	--main-bg-color: #161b22;
+	--main-title-color: #f0f6fc;
+	--main-content-color: #c9d1d9;
+	--shadow: #507dbc;
+}
+
+.toggle {
+	position: relative;
+	user-select: none;
+	;
+}
+
+.toggle-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	user-select: none;
+}
+
+.toggle-icon {
+	width: 28px;
+	user-select: none;
+}
+
+.toggle-label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: 3px solid #fff;
+	padding: 4px;
+	border-radius: 50px;
+	width: 100px;
+	background-color: var(--shadow);
+	transition: all 0.3s ease;
+	user-select: none;
+	margin: 0 auto;
+}
+
+.toggle-label:hover {
+	background-color: #787878;
+}
+
+.toggle-label:active {
+	transform: scale(0.95)
+}
+
+
 /* Basic */
 
 html {
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 *,
@@ -173,7 +232,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background: var(--main-bg-color);
 }
 
 body.is-preload *,
@@ -193,7 +252,7 @@ body,
 input,
 select,
 textarea {
-	color: #a2a2a2;
+	color: var(--main-content-color);
 	font-family: 'Source Sans Pro', Helvetica, sans-serif;
 	font-size: 16pt;
 	font-weight: 400;
@@ -237,7 +296,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #787878;
+	color: var(--main-title-color);
 	font-weight: 400;
 	line-height: 1em;
 	margin: 0 0 1em 0;
@@ -1972,7 +2031,7 @@ textarea {
 	padding: 0.75em;
 }
 
-input[type='checkbox'],
+/* input[type='checkbox'],
 input[type='radio'] {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -2049,7 +2108,7 @@ input[type='checkbox'] + label:before {
 
 input[type='radio'] + label:before {
 	border-radius: 100%;
-}
+} */
 
 ::-webkit-input-placeholder {
 	color: #b2b2b2 !important;
@@ -2711,7 +2770,6 @@ input[type='button']:disabled,
 	-webkit-flex-shrink: 0;
 	-ms-flex-shrink: 0;
 	flex-shrink: 0;
-	width: 100%;
 }
 
 #header > .inner {
